@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- <a> 태그 요청 -->
+<div>
+  <a href="/servlet/request?number=10&number2=1.5">요청</a>
+</div>
+
+</body>
+</html>

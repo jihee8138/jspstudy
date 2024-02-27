@@ -11,12 +11,22 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>HelloWorld</display-name>
-    <servlet-name>HelloWorld</servlet-name>
-    <servlet-class>test.HelloWorld</servlet-class>
+    <display-name>LifeCycle</display-name>
+    <servlet-name>LifeCycle</servlet-name>
+    <servlet-class>pkg01_lifecycle.LifeCycle</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HelloWorld</servlet-name>
-    <url-pattern>/HelloWorld</url-pattern>
+    <servlet-name>LifeCycle</servlet-name>
+    <url-pattern>/LifeCycle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyRequest</display-name>
+    <servlet-name>MyRequest</servlet-name>
+    <servlet-class>pkg02_request.MyRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyRequest</servlet-name>
+    <url-pattern>/request</url-pattern>
   </servlet-mapping>
 </web-app>
