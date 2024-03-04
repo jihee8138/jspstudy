@@ -1,0 +1,39 @@
+package pkg08_ajax;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class GetData2 extends HttpServlet {
+  
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	  
+	  StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B552061/AccidentDeath/getRestTrafficAccidentDeath");
+	  urlBuilder.append("?serviceKey=").append(URLEncoder.encode("JEX5dtmGClN/2oC82WEN1tm3NdJLMMb5rOUBd42Mr9cISHCDPBLpXI7ZGqQY66HDgUwxlRY9tkph9MozkxOvaA==", "UTF-8"));
+	  urlBuilder.append("&searchYear=").append(URLEncoder.encode("2023", "UTF-8"));
+	  urlBuilder.append("&siDo=").append(URLEncoder.encode("1100", "UTF-8"));
+	  urlBuilder.append("&guGun=").append(URLEncoder.encode("1116", "UTF-8"));
+	  urlBuilder.append("&type=").append(URLEncoder.encode("json", "UTF-8"));
+	  urlBuilder.append("&numOfRows=").append(URLEncoder.encode("10", "UTF-8"));
+	  urlBuilder.append("&pageNo=").append(URLEncoder.encode("1", "UTF-8"));
+	  
+	  String spec = urlBuilder.toString();
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
+
+
+    
+    
+    

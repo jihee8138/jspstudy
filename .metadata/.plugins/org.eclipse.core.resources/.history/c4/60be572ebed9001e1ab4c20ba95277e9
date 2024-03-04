@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div>
+  <button type="button" id="btn1">정보가져오기</button>
+</div>
+<table border="1">
+  <tbody id="contents1"></tbody>
+</table>
+
+<script>
+  
+  const getData1 = () => {
+	  
+  }
+  
+  document.getElementById("btn1").addEventListner('click', getData1);
+</script>
+
+</body>
+</html>
