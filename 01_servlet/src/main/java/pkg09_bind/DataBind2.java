@@ -31,6 +31,7 @@ public class DataBind2 extends HttpServlet {
     HttpSession session = request.getSession();
     session.setAttribute("b", "로그인정보");
     
+    // 세션 중요 (세션 제외하곤 거의 다 리퀘스트) 리퀘스트랑 세션 위주로 공부하면 됨
     // 세션 유지시간 설정하기 (디폴트 30분)
     session.setMaxInactiveInterval(60 * 60); // 초 단위 (1시간). -1과 같은 음수를 전달하면 무한으로 활용 가능
     
