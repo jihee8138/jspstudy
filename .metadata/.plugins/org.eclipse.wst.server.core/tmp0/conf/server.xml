@@ -140,7 +140,37 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\02_jsp" path="/jsp" reloadable="true" source="org.eclipse.jst.jee.server:02_jsp"/><Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\01_servlet" path="/servlet" reloadable="true" source="org.eclipse.jst.jee.server:01_servlet"/><Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\servlet_test" path="/test" reloadable="true" source="org.eclipse.jst.jee.server:servlet_test"/><Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\03_mvc" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:03_mvc"/></Host>
+      <Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\GDJ77\jspstudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\04_dbcp" path="/dbcp" reloadable="true" source="org.eclipse.jst.jee.server:04_dbcp">
+
+  <!-- Connection Pool 처리에 필요한 Oracle 접속 정보 -->
+  
+  <!-- maxTotal: Maximum number of database connections in pool. Make sure you
+     configure your oracle max_connections large enough to handle
+     all of your db connections. Set to -1 for no limit.
+     -->
+
+  <!-- maxIdle: Maximum number of idle database connections to retain in pool.
+       Set to -1 for no limit. See also the DBCP 2 documentation on this
+       and the minEvictableIdleTimeMillis configuration parameter.
+       -->
+
+  <!-- maxWaitMillis: Maximum time to wait for a database connection to become available
+       in ms, in this example 10 seconds. An Exception is thrown if
+       this timeout is exceeded. Set to -1 to wait indefinitely.
+       -->
+
+  <!-- username and password: Oracle username and password for database connections  -->
+
+  <!-- driverClassName: Class name for the Oracle JDBC driver.
+       Class name for the official Oracle ojdbc8 Driver is oracle.jdbc.OracleDriver.
+       -->
+
+  <!-- url: The JDBC connection url for connecting to your Oracle database.
+       -->
+  
+  <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="10000" name="jdbc/myoracle" password="1111" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="GD"/>
+
+</Context></Host>
     </Engine>
   </Service>
 </Server>
