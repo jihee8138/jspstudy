@@ -123,13 +123,19 @@ public class BoardDaoImpl implements BoardDao {
 	
 
 	@Override
-	public List<BoardDto> selectBoardList(Map<String, Object> map) {
+	public List<BoardDto> selectBoardList(Map<String, Object> params) {
 		List<BoardDto> boardList = new ArrayList<>();
 		try {
 			con = dataSource.getConnection();
 			// 순서 : BOARD_NO, TITLE, CONTENTS, MODIFIED_AT, CREATED_AT FROM BOARD_T
-			String sql = "SELECT BOARD_NO, TITLE, CONTENTS, MODIFIED_AT, CREATED_AT FROM BOARD_T ORDER BY BOARD_NO DESC";
+			String sql = "SELECT BOARD_NO, TITLE, CONTENTS, MODIFIED_AT, CREATED_AT"
+          + "  FROM (SELECT ROW_NUMBER() OVER(ORDER BY BOARD_NO " + params.get("sort") + ") AS RN, BOARD_NO, TITLE, CONTENTS, MODIFIED_AT, CREATED_AT"
+          + "          FROM BOARD_T)"
+          + " WHERE RN BETWEEN ? AND ?";
 			ps = con.prepareStatement(sql);
+			ps.setInt(1, (int)params.get("begin"));  // params가 object로 저장되어 있기 때문에 setInt 시 캐스팅 필요
+			ps.setInt(2, (int)params.get("end"));
+			
 			// 실행 결과 받는 애 : rs (select 결과는 무조건 rs가 받는다.)
 			// rs 객체가 select 결과를 하나씩 하나씩 찾는다.
 			rs = ps.executeQuery();

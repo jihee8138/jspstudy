@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=03_mvc/src\/main\/java&lt;model{MyInterface.java[MyInterface" modifiers="513" timestamp="1709781880345"/>
-    <typeInfo handle="=04_dbcp/src\/main\/java&lt;com.gdu.prj.dao{BoardDao.java[BoardDao" modifiers="513" timestamp="1709861421345"/>
-    <typeInfo handle="=04_dbcp/src\/main\/java&lt;com.gdu.prj.service{BoardService.java[BoardService" modifiers="513" timestamp="1709793665366"/>
+    <typeInfo handle="=04_dbcp/src\/main\/java&lt;com.gdu.prj.dao{BoardDao.java[BoardDao" modifiers="513" timestamp="1709882084412"/>
+    <typeInfo handle="=04_dbcp/src\/main\/java&lt;com.gdu.prj.service{BoardService.java[BoardService" modifiers="513" timestamp="1709881843331"/>
+    <typeInfo handle="=05_mybatis_junit/src\/main\/java&lt;com.gdu.prj.dao{BoardDao.java[BoardDao" modifiers="513" timestamp="1710120170793"/>
 </typeInfoHistroy>
